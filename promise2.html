@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function method1() {
+            return new Promise(function(resolve, reject){ //resolve : 에러가 없을 때 | reject : 에러가 발생 했을 때
+            setTimeout(function(){ 
+                resolve(10)
+                //reject(12)            
+            }, 2000)
+            }) 
+            
+        }
+        function method2(val) {
+            return new Promise(function(resolve){
+                setTimeout(function(){
+                    resolve(val + 10)
+                }, 1000)
+            })
+        }
+        var a = method1();
+        a.then(function(data){ //data에는 resolve로 보낸 값이 넘어옴(성공했을 때)
+            console.log(data)
+
+            var b = method2(data)
+            b.then(function(data2){
+                console.log('data2 : ' + data2)
+                console.log('hello')
+                console.log('finally')
+            })
+        }).catch(function(err){ //err에는 reject로 보낸 값이 넘어옴(실패했을 때)
+            console.log('err : ' + err)
+        })   
+    </script>
+    
+</body>
+</html>

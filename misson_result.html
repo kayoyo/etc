@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = {
+            var : [11, 2, 6, 8, 10, 19, 5],
+            filter : function(fn){ // fn에 "item < 10" 이 담기게 됨
+                /*var result = fn(10) // 10 < 10 은 false 
+                console.log('result : ' + result)*/
+                for(var i=0; i<this.val.length; i++){
+                    var result = fn(this.val[i])
+                }
+            }
+        }
+
+        var arr2 = arr.filter(function(item){
+            return item < 10
+        })
+    </script>
+</body>
+</html>

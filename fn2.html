@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function My(){ 
+            this.age = 10;
+            console.log(this);
+        }
+        My();
+        var age2 = 20;
+        console.log(window.age);
+        console.log(window.age2);
+        /*
+        function dd(){
+             this.name = 'Hello'
+            return {
+                a: function(){
+                    return new function(){
+                        console.log(this);
+                    }
+                }
+            }
+        }
+        var obj = dd()
+        var mtd = obj.a()
+       */ 
+    </script>
+</body>
+</html>

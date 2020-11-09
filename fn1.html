@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //동적 프로토타입 기반 객체 지향 언어
+        function MyFn() {
+            /*this.method2 = function() {
+                alert('ccccc')
+            }*/
+            this.name = '병지니'
+            this.method2 = function() {
+                alert(this.name)
+            }
+
+        }
+        
+        //객체 생성 후 프로토타입 추가 가능
+        var obj = new MyFn()
+
+        MyFn.prototype.method1 = function() {
+            alert('abcd')
+        }
+        obj.method2();
+        obj.method1();
+        
+       
+    </script>
+</body>
+</html>
